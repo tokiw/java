@@ -29,5 +29,6 @@ public class LineFilterReader extends FilterReader {
 	public static void main(String[] args) throws IOException {
 		LineFilterReader line = new LineFilterReader(new InputStreamReader(System.in));
 		System.out.println(line.readLine());
+		line.close();
 	}
 }

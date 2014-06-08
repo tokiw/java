@@ -52,7 +52,7 @@ public class ColorAttr extends Attr {
 	
 	@Override
 	public int hashCode() {
-		
+		return 0;
 	}
 	
 	public static void main(String[] args) {
