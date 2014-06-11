@@ -1,5 +1,4 @@
 /Interpreter
-/Vehicle.class
 /ch16
 /ex01_14
 /ex01_15
@@ -23,9 +22,7 @@
 /ex03_8
 /ex03_9
 /ex04_1
-/ex04_2
 /ex04_3
-/ex05_1
 /ex05_2
 /ex06_1
 /ex06_2
@@ -61,12 +58,10 @@
 /ex20_2
 /ex20_3
 /ex20_4
-/ex20_5
 /ex7_1
 /ex7_2
 /ex7_3
 /ex9_1
-/ex9_2
 /ex9_3
 /gui1_1
 /gui1_1_sample
@@ -81,6 +76,7 @@
 /practice2_9
 /sample
 /threadPool
+<<<<<<< HEAD
 /gui2_1
 /ex14_7
 /Friendly.class
@@ -92,3 +88,18 @@
 /ex16_4
 /ex22
 /ex22_10
+=======
+/Vehicle.class
+/ex21_1
+/ex21_2
+/ex21_3
+/ex21_4
+/ex21_6
+/ex22_1
+/ex22_5
+/ex22_6
+/ex22_2
+/ex22_3
+/ex22_10
+/ex22_14
+>>>>>>> remotes/origin/HEAD

@@ -1,6 +1,9 @@
 package ex17_2;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.lang.ref.WeakReference;
 
 public class DataHandler {
@@ -23,7 +26,27 @@ public class DataHandler {
 	}
 
 	private byte[] readBytesFromFile(File file) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		byte[] b = null;
+		FileInputStream input = null;
+		ByteArrayOutputStream output = null;
+		try {
+			input = new FileInputStream(file);
+			output = new ByteArrayOutputStream();
+			while (input.read(b) > 0) {
+				output.write(b);
+			}
+		} catch (IOException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} finally {
+			try {
+				input.close();
+				output.close();
+			} catch (IOException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+			}
+		}
+		return output.toByteArray();
 	}
 }

@@ -28,7 +28,8 @@ class MyUtilities {
 			}
 		}
 	}
-	public double readDaraSet() {
-	
+	public double[] readDataSet(FileInputStream in) {
+		double[] d = {};
+		return d;
 	}
 }
