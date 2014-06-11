@@ -27,6 +27,7 @@ public class DigitalWatch extends JFrame implements Runnable, ActionListener {
 		this.add(stopButton);
 		startButton.addActionListener(this);
 		stopButton.addActionListener(this);
+		this.setResizable(false);
 		
 		this.addWindowListener(new myWindowAdapter());
 	}
@@ -61,12 +62,12 @@ public class DigitalWatch extends JFrame implements Runnable, ActionListener {
 		panel.setPreferredSize(clock.getSize());
 		clock.add(panel);
 		clock.setVisible(true);
-		th.start();   //ƒXƒŒƒbƒhƒXƒ^[ƒg
+		th.start();   //ï¿½Xï¿½ï¿½ï¿½bï¿½hï¿½Xï¿½^ï¿½[ï¿½g
 	}
 }
 
 class myWindowAdapter extends WindowAdapter {
-	public void windowClosing(WindowEvent e){   //~‚ğ‰Ÿ‚³‚ê‚½‚Æ‚«‚Ìˆ—
+	public void windowClosing(WindowEvent e){   //ï¿½~ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Æ‚ï¿½ï¿½Ìï¿½ï¿½ï¿½
 		System.exit(0);
 	}
 }

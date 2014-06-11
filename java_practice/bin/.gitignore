@@ -1,4 +1,5 @@
 /Interpreter
+/Vehicle.class
 /ch16
 /ex01_14
 /ex01_15
@@ -50,7 +51,12 @@
 /ex14_4
 /ex14_5
 /ex14_6
+/ex14_7
+/ex14_8
 /ex16_1
+/ex16_2
+/ex16_3
+/ex16_4
 /ex17_1
 /ex17_2
 /ex19_1
@@ -58,6 +64,15 @@
 /ex20_2
 /ex20_3
 /ex20_4
+/ex21_1
+/ex21_2
+/ex21_4
+/ex21_6
+/ex22_1
+/ex22_2
+/ex22_3
+/ex22_5
+/ex22_6
 /ex7_1
 /ex7_2
 /ex7_3
@@ -68,6 +83,7 @@
 /gui1_2
 /gui1_3
 /gui1_4
+/gui2_1
 /java_practice
 /practice2_10
 /practice2_5
@@ -76,30 +92,5 @@
 /practice2_9
 /sample
 /threadPool
-<<<<<<< HEAD
-/gui2_1
-/ex14_7
-/Friendly.class
-/Friendly$1.class
-/Friendly$2.class
-/ex14_8
-/ex16_2
-/ex16_3
-/ex16_4
-/ex22
-/ex22_10
-=======
-/Vehicle.class
-/ex21_1
-/ex21_2
-/ex21_3
-/ex21_4
-/ex21_6
-/ex22_1
-/ex22_5
-/ex22_6
-/ex22_2
-/ex22_3
 /ex22_10
 /ex22_14
->>>>>>> remotes/origin/HEAD

@@ -2,6 +2,7 @@ package ex22_3;
 
 import java.util.BitSet;
 import java.util.HashMap;
+import java.util.Set;
 
 public class WhichChars {
 	private HashMap<Byte, BitSet> used = new HashMap<>();
@@ -21,8 +22,12 @@ public class WhichChars {
 	
 	public String toString() {
 		String desc = "[";
-		for(Character c : used) {
-			desc += c;
+		Set<Byte> keys = used.keySet();
+		for(Byte b : keys) {
+			BitSet bs = used.get(keys);
+			for(int i = bs.nextSetBit(0); i >= 0; i = bs.nextSetBit(i + 1)) {
+				
+			}
 		}
 		return desc + "]";
 	}
