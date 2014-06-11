@@ -20,14 +20,11 @@ public class digitalWatch extends Frame implements Runnable, ActionListener{
 	boolean watchRun = true;
 	static digitalWatch clock = new digitalWatch();
 	static Thread th = new Thread(clock);
-	Calendar now = Calendar.getInstance();	//calendarオブジェクトの作成
 	Button stopButton;
 	Button startButton;
 	private static final String button01 = "start";
 	private static final String button02 = "stop";
-	int flg_button = -1;
-	private static final int positionX = 50;
-	private static final int positionY = 150;
+	int flgStart = 1;
 	private static final int windowWidth = 640;
 	private static final int windowHeight = 400;
 	private static String str;
@@ -46,13 +43,13 @@ public class digitalWatch extends Frame implements Runnable, ActionListener{
 	
 	public void run(){
 		while(watchRun){
-			h = now.getInstance().get(now.HOUR_OF_DAY); //時を代入
-			m = now.getInstance().get(now.MINUTE);      //分を代入
-			s= now.getInstance().get(now.SECOND);       //秒を代入
+			h = Calendar.getInstance().get(Calendar.HOUR_OF_DAY); //時を代入
+			m = Calendar.getInstance().get(Calendar.MINUTE);      //分を代入
+			s= Calendar.getInstance().get(Calendar.SECOND);       //秒を代入
 			repaint();									//更新
 
 			try{
-				th.sleep(1000);  //スリープ１秒
+				Thread.sleep(1000);  //スリープ１秒
 			}catch(InterruptedException e){
 			}
 		}
@@ -60,11 +57,11 @@ public class digitalWatch extends Frame implements Runnable, ActionListener{
 	
 	public void actionPerformed(final ActionEvent ae) {
 		if (ae.getActionCommand() == digitalWatch.button01) {
-			this.flg_button = 0;
+			this.flgStart = 1;
 			this.repaint();
 		}
 		if (ae.getActionCommand() == digitalWatch.button02) {
-			this.flg_button = 1;
+			this.flgStart = 0;
 			this.repaint();
 		}
 	}
@@ -73,11 +70,9 @@ public class digitalWatch extends Frame implements Runnable, ActionListener{
 		Dimension size = getSize();
 		g.setFont(new Font("TimesRoman",Font.ITALIC, 1 * size.width / 10));
 		FontMetrics fm = g.getFontMetrics();
-		if (this.flg_button > -1) {
-			g.clearRect(0, 0, digitalWatch.windowWidth - 1, digitalWatch.windowHeight - 1);
+		g.clearRect(0, 0, digitalWatch.windowWidth - 1, digitalWatch.windowHeight - 1);
 			
-		}
-		if (this.flg_button == 0) {
+		if (this.flgStart == 1) {
 			if (m < 10 && s >= 10)
 				g.drawString(h+":0"+m+":"+s, (size.width - fm.stringWidth(h+":0"+m+":"+s)) / 2 , (size.height + fm.getHeight()) / 2);	//drawString(str, int x, int )
 			else if (m >= 10 && s < 10)
@@ -87,8 +82,9 @@ public class digitalWatch extends Frame implements Runnable, ActionListener{
 			else
 				g.drawString(h+":"+m+":"+s, (size.width - fm.stringWidth(h+":"+m+":"+s)) / 2, (size.height + fm.getHeight()) / 2);
 		}
-		if (this.flg_button == 1) {
+		if (this.flgStart == 0) {
 			g.drawString(str, (size.width - fm.stringWidth(str)) / 2, (size.height + fm.getHeight()) / 2);
+
 		}else {
 			if (m < 10 && s >= 10)
 				str = h+":0"+m+":"+s;

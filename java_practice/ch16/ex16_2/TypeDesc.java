@@ -1,4 +1,4 @@
-package ex16_1;
+package ex16_2;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -25,14 +25,16 @@ public class TypeDesc {
 		iFace = {null, "extends"};
 	
 	private void printType(Type type, int depth, String[] labels) {
-		if(type == null)
+		if(type == null) {
 			return;
+		}
 		if(type == Object.class)
 			return;
 		Class<?> cls = null;
-		if(type instanceof Class<?>)
+		if(type instanceof Class<?>) {
 			cls = (Class<?>) type;
-		else if(type instanceof ParameterizedType) {
+		}else if(type instanceof ParameterizedType) {
+			System.out.println("b");
 			cls = (Class<?>)((ParameterizedType)type).getRawType();
 		}else {
 			throw new Error("Unexpected non-class type");
@@ -40,7 +42,6 @@ public class TypeDesc {
 
 		for(int i = 0; i < depth; i++)
 			out.print(" ");
-		
 		int kind = cls.isAnnotation() ? 3 :
 			cls.isEnum() ? 2 :
 			cls.isInterface() ? 1 : 0;
@@ -67,6 +68,8 @@ public class TypeDesc {
 		{
 			printType(iface, depth + 1, cls.isInterface() ? iFace : supercl);
 		}
+
+		printType(cls.getEnclosingClass(), depth + 1, basic);
 		
 		printType(cls.getGenericSuperclass(), depth + 1, supercl);
 	}

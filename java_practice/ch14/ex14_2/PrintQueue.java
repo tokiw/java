@@ -13,4 +13,8 @@ public class PrintQueue {
 			wait();
 		return queue.remove();
 	}
+	
+	public int size() {
+		return queue.size();
+	}
 }

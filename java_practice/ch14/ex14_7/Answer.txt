@@ -1,0 +1,6 @@
+・false 2 Did DidNot
+基本的にはDid Did DidNot DidNotだが異なる場合もある。
+
+・true 2 Did DidNot
+falseのときと同様に、基本的にはDid Did DidNot DidNotだが異なる場合もある。
+交互になることは一度もなかった。

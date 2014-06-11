@@ -20,7 +20,7 @@ public class Messenger {
 					}
 					synchronized(lock) {
 						if(count != 0)
-							System.out.println(messageIntervalTime + " second elapsed");
+							System.out.println("Elapsed " + messageIntervalTime + " second");
 						try{
 							lock.wait();
 						}catch(InterruptedException e) {
