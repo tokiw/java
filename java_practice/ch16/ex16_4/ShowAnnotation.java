@@ -12,7 +12,6 @@ public class ShowAnnotation {
 			}
 			
 		} catch (ClassNotFoundException e) {
-			// TODO ©“®¶¬‚³‚ê‚½ catch ƒuƒƒbƒN
 			e.printStackTrace();
 		}
 	}
