@@ -11,13 +11,9 @@ public class FinderWord {
 		try {
 			FileReader fr = new FileReader(filePath);
 			LineNumberReader lr = new LineNumberReader(fr);
-			
-			//ArrayList<Integer> list = new ArrayList<>();
-			//int lineNumber = lr.getLineNumber();
-			
+						
 			while((line = lr.readLine()) != null) {
 				if(line.contains(word)) {
-					//list.add(lineNumber);
 					System.out.println(lr.getLineNumber() + " " + line);
 				}
 			}
