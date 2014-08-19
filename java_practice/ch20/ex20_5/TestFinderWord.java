@@ -8,7 +8,7 @@ public class TestFinderWord {
 		String filePath = "sample.txt";
 		try {
 			FileWriter fr = new FileWriter(filePath);
-			fr.write("aa\nss\ndd\nff\ngg\nhh\njj\nkk\nll");
+			fr.write("aa\nss\ndd\nff\ngg\nhh\njj\nkk\naaaaaddffff\nll");
 			fr.close();
 			
 			FinderWord.findWord(filePath, "dd");
