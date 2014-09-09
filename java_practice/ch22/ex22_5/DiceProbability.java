@@ -69,9 +69,9 @@ public class DiceProbability {
 	
 	public static void main(String[] args) {
 		DiceProbability dice = new DiceProbability();
-		double[] probability1 = dice.calculateProbability(3);
-		double[] probability2 = dice.randomProbability(3, 10000);
+		double[] theoreticalVal = dice.calculateProbability(3);
+		double[] measuredVal = dice.randomProbability(3, 10000);
 		
-		printComparison(probability1, probability2);
+		printComparison(theoreticalVal, measuredVal);
 	}
 }
