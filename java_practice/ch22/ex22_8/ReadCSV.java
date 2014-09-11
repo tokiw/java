@@ -17,6 +17,7 @@ public class ReadCSV {
 		String exp = "^";
 		
 		if (cellNum < 1) {
+			in.close();
 			throw new IllegalArgumentException();
 		}
 		
@@ -29,6 +30,7 @@ public class ReadCSV {
 			String line = in.findInLine(pat);
 			if (line != null) {
 				if (line.split(",").length != cellNum) {
+					in.close();
 					throw new IOException("input format error");
 				}
 				String[] cells = new String[cellNum];
@@ -40,17 +42,14 @@ public class ReadCSV {
 				in.nextLine();
 			}else {
 				if (!in.nextLine().matches("\\s*")) {
+					in.close();
 					throw new IOException("input format error");
 				}
 				
 			}
 		}
-		
-		IOException ex = in.ioException();
-		if (ex != null) {
-			throw ex;
-		}
-		
+		in.close();
+
 		return vals;
 	}
 	

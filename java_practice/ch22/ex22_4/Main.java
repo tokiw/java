@@ -6,7 +6,7 @@ public class Main {
 		attributed.add(new Attr<Integer>("a", 1));
 		attributed.remove("a");
 		
-		AttributedObserver<Integer> obsever = new AttributedObserver<>(attributed);
+		new AttributedObserver<>(attributed);
 		
 		attributed.add(new Attr<Integer>("b", 2));
 		attributed.remove("b");

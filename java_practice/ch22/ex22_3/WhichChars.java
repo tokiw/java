@@ -2,7 +2,6 @@ package ex22_3;
 
 import java.util.BitSet;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Set;
 
 public class WhichChars {
