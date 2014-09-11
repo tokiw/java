@@ -5,10 +5,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 
-/*
- * –³ŒÀƒ‹[ƒv‚ª~‚Ü‚ç‚È‚¢...
- * 
- */
 public class CommandStream {
 	
 	public CommandStream(final InputStream input, final OutputStream output) {
