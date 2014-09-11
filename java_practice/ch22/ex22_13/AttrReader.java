@@ -1,4 +1,4 @@
-package ex22_12;
+package ex22_13;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -25,12 +25,21 @@ public class AttrReader {
 				String line = in.findInLine(patMap);
 				if (line != null) {
 					MatchResult match = in.match();
-					attrs.add(new Attr(match.group(1), match.group(2)));
+					if (line.indexOf('=') == 0) {
+						in.close();
+						throw new IOException("misplaced '='");
+					}else {
+						attrs.add(new Attr(match.group(1), match.group(2)));					
+						in.nextLine();
+					}
+				}else {
+					in.nextLine();
 				}
-				in.nextLine();
 			}else {
-				in.close();
-				throw new IOException("input format error");
+				if (!in.nextLine().matches("\\s*")) {
+					in.close();
+					throw new IOException("input format error");
+				}
 			}
 		}
 		in.close();
@@ -40,7 +49,7 @@ public class AttrReader {
 	
 	public static void main(String[] args) {
 		try {
-			FileReader file = new FileReader("./ch22/ex22_12/sample.txt");
+			FileReader file = new FileReader("./ch22/ex22_13/sample.txt");
 			Attributed attrs = AttrReader.readAttrs(file);
 			Iterator<Attr> iterator = attrs.attrs();
 			Attr attr;
