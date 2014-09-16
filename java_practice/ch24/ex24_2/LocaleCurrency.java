@@ -2,7 +2,6 @@ package ex24_2;
 
 import java.util.Currency;
 import java.util.Locale;
-import java.util.Map;
 
 public class LocaleCurrency {
 	private static Currency[] currency;
